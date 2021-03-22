@@ -47,9 +47,9 @@ void convertToImproper(sMixedNumber *result, sMixedNumber original) {
     
     result->numerator *= sign;
     
-    printf("result: ");
+    /*printf("result: ");
     mixed_print(*result);
-    printf("\n");
+    printf("\n");*/
     return;
 }
 
@@ -73,9 +73,9 @@ void convertToProper(sMixedNumber *result, sMixedNumber original) {
     }
     
     result->integerPart *= sign;
-    printf("result: ");
+    /*printf("result: ");
     mixed_print(*result);
-    printf("\n");
+    printf("\n");*/
     return;
 }
 
