@@ -27,6 +27,26 @@ long int gcd(long int num1, long int num2) {
     return num1;
 }
 
+//return 1 if true else return 0
+int checkMixed(const sMixedNumber *mixed) {
+    //only integer part xor numerator can be negative
+    if(mixed->denominator <= 0 && mixed->numerator > 0) {
+        return 0;
+        //no improper fractions
+    } else if(mixed->numerator == 0 && mixed->denominator > 0) {
+        //no 0 in the numerator
+        return 0;
+    } else if(mixed->numerator >= mixed->denominator) {
+        return 0;
+    } else if(mixed->integerPart < 0 && mixed->numerator < 0) {
+        return 0;
+    } else if(mixed == NULL) {
+        return 0;
+    }
+    
+    return 1;
+}
+
 //convert to improper fraction
 void convertToImproper(sMixedNumber *result, sMixedNumber original) {
     int sign = 1;
@@ -79,6 +99,20 @@ void convertToProper(sMixedNumber *result, sMixedNumber original) {
     return;
 }
 
+int mixed_set( sMixedNumber *pNumber , int32_t a, int32_t b,
+              int32_t c) {
+    pNumber->integerPart = a;
+    pNumber->numerator = b;
+    pNumber->denominator = c;
+    
+    if(!checkMixed(pNumber)) {
+        //("Invalid input, input reset to (0,0,0)");
+        return -1;
+    }
+    
+    return 0;
+}
+
 int mixed_print( const sMixedNumber number) {
     printf("(%ld,%ld,%ld)", number.integerPart, number.numerator, number.denominator);
     
@@ -112,6 +146,9 @@ void rational_add( sMixedNumber *pNumber , const sMixedNumber r1
     long int gcdNum = gcd(pNumber->denominator, pNumber->numerator);
     pNumber->numerator /= gcdNum;
     pNumber->denominator /= gcdNum;
+    if(pNumber->numerator == 0) {
+        pNumber->denominator = 0;
+    }
 }
 
 void rational_sub( sMixedNumber *pNumber , const sMixedNumber r1
@@ -145,6 +182,9 @@ void rational_sub( sMixedNumber *pNumber , const sMixedNumber r1
     long int gcdNum = gcd(pNumber->denominator, pNumber->numerator);
     pNumber->numerator /= gcdNum;
     pNumber->denominator /= gcdNum;
+    if(pNumber->numerator == 0) {
+        pNumber->denominator = 0;
+    }
 }
 
 void rational_mul( sMixedNumber *pNumber , const sMixedNumber r1
@@ -166,6 +206,9 @@ void rational_mul( sMixedNumber *pNumber , const sMixedNumber r1
     long int gcdNum = gcd(pNumber->denominator, pNumber->numerator);
     pNumber->numerator /= gcdNum;
     pNumber->denominator /= gcdNum;
+    if(pNumber->numerator == 0) {
+        pNumber->denominator = 0;
+    }
 }
 
 void rational_div( sMixedNumber *pNumber , const sMixedNumber r1
@@ -184,7 +227,11 @@ void rational_div( sMixedNumber *pNumber , const sMixedNumber r1
     
     convertToProper(pNumber, *pNumber);
     
+    
     long int gcdNum = gcd(pNumber->denominator, pNumber->numerator);
     pNumber->numerator /= gcdNum;
     pNumber->denominator /= gcdNum;
+    if(pNumber->numerator == 0) {
+        pNumber->denominator = 0;
+    }
 }

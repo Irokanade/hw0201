@@ -1,4 +1,5 @@
 //
+//
 //  hw0201.c
 //  hw0201
 //
@@ -14,6 +15,9 @@ int main() {
     sMixedNumber num1 = {-5,4,5};
     sMixedNumber num2 = {2,9,10};
     sMixedNumber result;
+    sMixedNumber num3;
+    
+    printf("valid: %d\n", mixed_set(&num3, -1, -1, 2));
     
     printf("num1:\n");
     mixed_print(num1);

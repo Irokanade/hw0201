@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E6655B32260582D700E4DE82 /* hw0201.c in Sources */ = {isa = PBXBuildFile; fileRef = E6655B31260582D700E4DE82 /* hw0201.c */; };
+		E652892A2608429600154933 /* hw0201.c in Sources */ = {isa = PBXBuildFile; fileRef = E65289292608429600154933 /* hw0201.c */; };
 		E6655B36260582F400E4DE82 /* mixed.c in Sources */ = {isa = PBXBuildFile; fileRef = E6655B35260582F400E4DE82 /* mixed.c */; };
 		E6655B392605B88A00E4DE82 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = E6655B382605B88A00E4DE82 /* Makefile */; };
 /* End PBXBuildFile section */
@@ -25,8 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E65289292608429600154933 /* hw0201.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hw0201.c; sourceTree = "<group>"; };
 		E6655B25260582C700E4DE82 /* hw0201 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hw0201; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6655B31260582D700E4DE82 /* hw0201.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hw0201.c; sourceTree = "<group>"; };
 		E6655B34260582F400E4DE82 /* mixed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mixed.h; sourceTree = "<group>"; };
 		E6655B35260582F400E4DE82 /* mixed.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mixed.c; sourceTree = "<group>"; };
 		E6655B382605B88A00E4DE82 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
@@ -62,10 +62,10 @@
 		E6655B27260582C700E4DE82 /* hw0201 */ = {
 			isa = PBXGroup;
 			children = (
-				E6655B31260582D700E4DE82 /* hw0201.c */,
 				E6655B34260582F400E4DE82 /* mixed.h */,
 				E6655B35260582F400E4DE82 /* mixed.c */,
 				E6655B382605B88A00E4DE82 /* Makefile */,
+				E65289292608429600154933 /* hw0201.c */,
 			);
 			path = hw0201;
 			sourceTree = "<group>";
@@ -127,7 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6655B392605B88A00E4DE82 /* Makefile in Sources */,
-				E6655B32260582D700E4DE82 /* hw0201.c in Sources */,
+				E652892A2608429600154933 /* hw0201.c in Sources */,
 				E6655B36260582F400E4DE82 /* mixed.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,6 +17,7 @@ typedef struct _sMixedNumber {
 } sMixedNumber;
 
 long int gcd(long int num1, long int num2);
+int checkMixed(const sMixedNumber *mixed);
 void convertToImproper(sMixedNumber *result, sMixedNumber original);
 void convertToProper(sMixedNumber *result, sMixedNumber original);
 int mixed_set( sMixedNumber *pNumber , int32_t a, int32_t b,
